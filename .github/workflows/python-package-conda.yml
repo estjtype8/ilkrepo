@@ -1,3 +1,13 @@
+name: HTTP deneme 
+on: workflow_dispatch
+
+curl -H "Accept: application/vnd.github.everest-preview+json" \
+    -H "Authorization: token <your personal access token>" \
+    --request POST \
+    --data '{"event_type": "do-something"}' \
+    https://api.github.com/repos/<username>/<repo>/dispatches
+
+
 jobs:
   deployment:
     runs-on: ubuntu-latest
